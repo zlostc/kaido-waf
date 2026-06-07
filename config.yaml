@@ -58,5 +58,5 @@ dashboard:
   port: 9090
   auth_enabled: true
   username: "admin"
-  password: "kaido2026"
-  session_secret: "change-this-secret-in-production"
+  password: "CHANGE_ME_IN_PRODUCTION"   # 🔴 MUDE ANTES DE USAR EM PRODUÇÃO!
+  session_secret: "CHANGE_ME_IN_PRODUCTION"  # 🔴 MUDE ANTES DE USAR EM PRODUÇÃO!

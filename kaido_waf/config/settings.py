@@ -78,8 +78,8 @@ class Config:
                 "port": 9090,
                 "auth_enabled": True,
                 "username": "admin",
-                "password": "kaido2026",
-                "session_secret": "change-this-secret-in-production",
+                "password": "CHANGE_ME_IN_PRODUCTION",  # 🔴 TROCAR EM PRODUÇÃO
+                "session_secret": "CHANGE_ME_IN_PRODUCTION",  # 🔴 TROCAR EM PRODUÇÃO
             },
         }
 

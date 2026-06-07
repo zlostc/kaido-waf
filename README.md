@@ -39,6 +39,29 @@ Opera como um **proxy reverso assíncrono** entre o cliente e o backend, inspeci
 >
 > *"Segurança não é produto, é processo. Kaido WAF é a materialização desse processo."*
 
+### 🚨 AVISO DE SEGURANÇA — ANTES DE USAR EM PRODUÇÃO
+
+```yaml
+# 🔴 MUDA ISSO ANTES DE POR EM PRODUÇÃO!
+dashboard:
+  password: "CHANGE_ME_IN_PRODUCTION"    # ← TROQUE ISSO
+  session_secret: "CHANGE_ME_IN_PRODUCTION"  # ← TROQUE ISSO
+```
+
+**Por que isso importa?**
+- A senha default do dashboard é pública (está neste README)
+- O `session_secret` default permite forjar sessões de admin
+- O Redis não tem senha por padrão (use `REDIS_PASSWORD` no docker-compose)
+
+**Checklist de segurança pré-produção:**
+- [ ] Alterar `dashboard.password`
+- [ ] Alterar `dashboard.session_secret`
+- [ ] Configurar `REDIS_PASSWORD` no Redis
+- [ ] Revisar `ip_blocking.whitelist`
+- [ ] Desabilitar dashboard em EXPOSIÇÃO PÚBLICA se não necessário
+- [ ] Usar HTTPS (Nginx/Cloudflare na frente)
+- [ ] Rodar com usuário não-root (Docker já faz isso)
+
 ### Por que Kaido WAF?
 
 | Característica | Kaido WAF | ModSecurity | Cloudflare WAF |
@@ -277,8 +300,8 @@ dashboard:
   port: 9090                  # Porta do dashboard
   auth_enabled: true          # Exige login
   username: "admin"           # Usuário do dashboard
-  password: "kaido2026"       # Senha do dashboard
-  session_secret: "change-this-secret-in-production"  # Secreta de sessão
+  password: "CHANGE_ME_IN_PRODUCTION"   # 🔴 MUDE ANTES DE USAR EM PRODUÇÃO!
+  session_secret: "CHANGE_ME_IN_PRODUCTION"  # 🔴 MUDE ANTES DE USAR EM PRODUÇÃO!
 ```
 
 ### Variáveis de ambiente:
@@ -603,8 +626,8 @@ dashboard:
   port: 9090
   auth_enabled: true
   username: "admin"
-  password: "kaido2026"       # Mude em produção!
-  session_secret: "change-this-secret-in-production"
+  password: "CHANGE_ME_IN_PRODUCTION"   # 🔴 MUDE ANTES DE USAR EM PRODUÇÃO!
+  session_secret: "CHANGE_ME_IN_PRODUCTION"  # 🔴 MUDE ANTES DE USAR EM PRODUÇÃO!
 ```
 
 ---

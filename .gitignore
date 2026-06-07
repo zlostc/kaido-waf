@@ -1,0 +1,58 @@
+# ⚔️ Kaido WAF — .gitignore
+# Segurança: nunca commitar secrets, cache ou arquivos locais
+
+# ── Python ──
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# ── Ambiente ──
+.env
+.env.local
+.env.production
+.venv/
+venv/
+env/
+ally_env/
+
+# ── IDE / Editor ──
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# ── Logs ──
+*.log
+/var/log/kaido-waf/
+
+# ── Docker ──
+.docker/
+
+# ── Segurança (NUNCA COMMITAR) ──
+*cred*
+*secret*
+*password*
+*.pem
+*.key
+*.cert
+id_rsa*
+*.p12
+*.jks
+
+# ── Dados Locais ──
+data/
+*.db
+*.sqlite
+redis_data/
+
+# ── Sistema ──
+*.pid
+*.lock
