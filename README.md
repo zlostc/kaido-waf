@@ -993,11 +993,10 @@ Faça um fork, implemente sua feature e abra um Pull Request. Todo detector novo
 
 ### **Gustavo** — Kaido Red Team
 
-> **Gustavo** é membro fundador do Kaido Red Team, especialista em segurança ofensiva e defensiva, criador de ferramentas de segurança e desenvolvedor full stack. O Kaido WAF é mais uma demonstração do compromisso do Kaido Team em criar ferramentas de segurança de alto nível para a comunidade.
+> **Gustavo** é membro do Kaido Red Team, especialista em segurança ofensiva e defensiva, criador de ferramentas de segurança e desenvolvedor full stack. O Kaido WAF é mais uma demonstração do compromisso do Kaido Team em criar ferramentas de segurança de alto nível para a comunidade.
 
 **Contato:**
 - GitHub: [@zlostc](https://github.com/zlostc)
-- Email: gustavo@kaido.team
 
 ### Kaido Red Team
 
@@ -1012,7 +1011,7 @@ Red team ofensivo brasileiro focado em:
 
 - **b1/epy (Izy/Izydoor)** — Owner/CEO do Kaido Team, criador de todo o arsenal Kaido, mentor e inspiração
 - **tec** — Red team core, operador principal, validação de ferramentas
-- **Valeria (arc)** — Agente de IA do time, contribuiu com análise e validação
+- **Gustavo** — Red team core, programador full stack, validação de ferramentas
 - **Ally** — Cachorro louco do hacking, agente auxiliar de desenvolvimento
 
 ### Agradecimentos
@@ -1041,7 +1040,6 @@ Veja o arquivo [LICENSE](LICENSE) para detalhes completos.
   <p>
     🌐 <a href="https://kaido.team">Kaido Team</a> •
     🐙 <a href="https://github.com/zlostc/kaido-waf">GitHub</a> •
-    📧 <a href="mailto:gustavo@kaido.team">Contato</a>
   </p>
   <p>
     <sub>Feito com 💀 no Brasil — porque segurança não é brincadeira, mas a gente leva a sério.</sub>
