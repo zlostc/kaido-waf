@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaido WAF — Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0f;
+            color: #e0e0e0;
+            min-height: 100vh;
+        }
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 240px;
+            height: 100vh;
+            background: #10101a;
+            border-right: 1px solid #1a1a2e;
+            padding: 24px 16px;
+        }
+        .sidebar h1 {
+            font-size: 20px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ff4400, #ff8800);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 4px;
+        }
+        .sidebar .subtitle {
+            font-size: 11px;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 32px;
+        }
+        .sidebar .nav-item {
+            padding: 10px 14px;
+            border-radius: 8px;
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .sidebar .nav-item:hover, .sidebar .nav-item.active {
+            background: #1a1a2e;
+            color: #ff4400;
+        }
+        .main {
+            margin-left: 240px;
+            padding: 32px 40px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+        .header h2 {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        .header .status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #888;
+        }
+        .header .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #00ff88;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+        .card {
+            background: #14141f;
+            border: 1px solid #1a1a2e;
+            border-radius: 12px;
+            padding: 24px;
+        }
+        .card .label {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .card .value {
+            font-size: 22px;
+            font-weight: 700;
+        }
+        .card .value.green { color: #00ff88; }
+        .card .value.orange { color: #ff8800; }
+        .card .value.red { color: #ff4444; }
+        .card .value.blue { color: #4488ff; }
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #ccc;
+        }
+        .detector-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .detector-tag {
+            padding: 6px 14px;
+            background: #1a1a2e;
+            border: 1px solid #2a2a3f;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #aaa;
+        }
+        .detector-tag.active {
+            border-color: #ff4400;
+            color: #ff4400;
+        }
+        .config-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .config-table td {
+            padding: 10px 8px;
+            border-bottom: 1px solid #1a1a2e;
+            font-size: 13px;
+        }
+        .config-table td:first-child {
+            color: #888;
+            width: 180px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 48px;
+            padding: 24px;
+            font-size: 12px;
+            color: #444;
+            border-top: 1px solid #1a1a2e;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h1>⚔️ Kaido WAF</h1>
+        <p class="subtitle">Web Application Firewall</p>
+        <div class="nav-item active">📊 Dashboard</div>
+        <div class="nav-item">📝 Logs</div>
+        <div class="nav-item">🔒 Regras</div>
+        <div class="nav-item">⚙️ Configurações</div>
+        <div class="nav-item">📈 Estatísticas</div>
+        <div style="margin-top: 48px;">
+            <div class="nav-item" style="color: #555; font-size: 12px;">
+                Kaido Red Team<br>
+                Criado por Gustavo
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="header">
+            <h2>📊 Dashboard</h2>
+            <div class="status">
+                <span class="status-dot"></span>
+                Online &bull; Modo {{ stats.mode }}
+            </div>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <div class="label">Status</div>
+                <div class="value green">{{ stats.status }}</div>
+            </div>
+            <div class="card">
+                <div class="label">Versão</div>
+                <div class="value blue">{{ stats.version }}</div>
+            </div>
+            <div class="card">
+                <div class="label">Modo</div>
+                <div class="value orange">{{ stats.mode }}</div>
+            </div>
+            <div class="card">
+                <div class="label">Rate Limit</div>
+                <div class="value green">{{ stats.rate_limit_rpm }} req/min</div>
+            </div>
+        </div>
+
+        <h3 class="section-title">🔍 Detectores Ativos</h3>
+        <div class="detector-list">
+            {% for detector in stats.detectors %}
+            <span class="detector-tag active">{{ detector }}</span>
+            {% endfor %}
+        </div>
+
+        <h3 style="margin-top: 32px;" class="section-title">⚙️ Configuração</h3>
+        <table class="config-table">
+            <tr><td>Upstream</td><td>{{ stats.upstream }}</td></tr>
+            <tr><td>Modo WAF</td><td>{{ stats.mode }}</td></tr>
+            <tr><td>Rate Limiting</td><td>{{ stats.rate_limit_rpm }} req/min</td></tr>
+            <tr><td>Detectores</td><td>{{ stats.detectors | length }} ativos</td></tr>
+        </table>
+
+        <div class="footer">
+            Kaido WAF &bull; Kaido Red Team &bull; Criado por Gustavo &bull; MIT License
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+# ⚔️ Kaido WAF — Docker Compose
+# Exemplo de deployment com Redis e backend Nginx
+
+version: "3.8"
+
+services:
+  kaido-waf:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    container_name: kaido-waf
+    restart: unless-stopped
+    ports:
+      - "8080:8080"      # WAF proxy
+      - "9090:9090"      # Dashboard
+    environment:
+      - KAIDO_WAF_CONFIG=/etc/kaido-waf/config.yaml
+    volumes:
+      - ../config.yaml:/etc/kaido-waf/config.yaml
+      - kaido_logs:/var/log/kaido-waf
+    depends_on:
+      - redis
+      - backend
+
+  redis:
+    image: redis:7-alpine
+    container_name: kaido-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+  backend:
+    image: nginx:alpine
+    container_name: kaido-backend
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    volumes:
+      - ./backend:/usr/share/nginx/html:ro
+
+volumes:
+  redis_data:
+  kaido_logs:
