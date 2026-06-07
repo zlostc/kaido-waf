@@ -35,7 +35,7 @@
 
 Opera como um **proxy reverso assíncrono** entre o cliente e o backend, inspecionando **cada requisição em tempo real** com um motor de detecção de alta performance que possui **mais de 150 padrões de ataque** em **10 categorias diferentes**.
 
-> **👑 Criado por Gustavo — Membro Fundador do Kaido Red Team**
+> **👑 Criado por Gustavo — Red Team, Cyber Segurança Ofensivo e Programador Full Stack**
 >
 > *"Segurança não é produto, é processo. Kaido WAF é a materialização desse processo."*
 
@@ -993,7 +993,7 @@ Faça um fork, implemente sua feature e abra um Pull Request. Todo detector novo
 
 ### **Gustavo** — Kaido Red Team
 
-> **Gustavo** é membro do Kaido Red Team, especialista em segurança ofensiva e defensiva, criador de ferramentas de segurança e desenvolvedor full stack. O Kaido WAF é mais uma demonstração do compromisso do Kaido Team em criar ferramentas de segurança de alto nível para a comunidade.
+> **Gustavo** é Red Team, especialista em cyber segurança ofensiva, programador full stack e criador de ferramentas de segurança. O Kaido WAF é mais uma demonstração do seu compromisso em criar ferramentas de segurança de alto nível para a comunidade.
 
 **Contato:**
 - GitHub: [@zlostc](https://github.com/zlostc)
