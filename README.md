@@ -1,6 +1,6 @@
 <div align="center">
   <h1>⚔️ Kaido WAF</h1>
-  <p><strong>Web Application Firewall do Kaido Red Team</strong></p>
+  <p><strong>Web Application Firewall de alto desempenho</strong></p>
   <p>
     <a href="#-sobre">Sobre</a> •
     <a href="#-arquitetura">Arquitetura</a> •
@@ -22,7 +22,7 @@
     <img src="https://img.shields.io/badge/version-2.1.0-ff4400" alt="Version">
     <img src="https://img.shields.io/badge/python-3.11%2B-ff8800" alt="Python">
     <img src="https://img.shields.io/badge/license-MIT-ff4400" alt="License">
-    <img src="https://img.shields.io/badge/kaido-red_team-ff0000" alt="Kaido Red Team">
+    <img src="https://img.shields.io/badge/waf-production-ff4400" alt="WAF">
     <img src="https://img.shields.io/badge/status-production-00ff88" alt="Status">
   </p>
 </div>
@@ -31,11 +31,11 @@
 
 ## 🔥 Sobre
 
-**Kaido WAF** é um Web Application Firewall de alto desempenho desenvolvido pelo **Kaido Red Team**, projetado para proteger aplicações web contra os ataques mais comuns e avançados do cenário atual.
+**Kaido WAF** é um Web Application Firewall de alto desempenho desenvolvido por **Gustavo**, projetado para proteger aplicações web contra os ataques mais comuns e avançados do cenário atual.
 
 Opera como um **proxy reverso assíncrono** entre o cliente e o backend, inspecionando **cada requisição em tempo real** com um motor de detecção de alta performance que possui **mais de 150 padrões de ataque** em **10 categorias diferentes**.
 
-> **👑 Criado por Gustavo — Red Team, Cyber Segurança Ofensivo e Programador Full Stack**
+> **👑 Criado por Gustavo — Cyber Segurança Ofensivo e Programador Full Stack**
 >
 > *"Segurança não é produto, é processo. Kaido WAF é a materialização desse processo."*
 
@@ -242,8 +242,8 @@ A configuração é feita via YAML. Por padrão, o WAF busca `config.yaml` no di
 
 ```yaml
 # ⚔️ Kaido WAF — Configuration
-# Web Application Firewall do Kaido Red Team
-# Criado por Gustavo — Kaido Team
+# Web Application Firewall de alto desempenho
+# Criado por Gustavo
 
 server:
   host: "0.0.0.0"            # Interface de rede
@@ -989,42 +989,23 @@ Faça um fork, implemente sua feature e abra um Pull Request. Todo detector novo
 
 ## 👑 Créditos
 
-**Kaido WAF** foi criado, desenvolvido e é mantido por:
+**Kaido WAF** foi criado, desenvolvido e é mantido por **Gustavo**.
 
-### **Gustavo** — Kaido Red Team
-
-> **Gustavo** é Red Team, especialista em cyber segurança ofensiva, programador full stack e criador de ferramentas de segurança. O Kaido WAF é mais uma demonstração do seu compromisso em criar ferramentas de segurança de alto nível para a comunidade.
+> **Gustavo** é especialista em cyber segurança ofensiva, programador full stack e criador de ferramentas de segurança. O Kaido WAF é mais uma demonstração do seu compromisso em criar ferramentas de segurança de alto nível para a comunidade.
 
 **Contato:**
 - GitHub: [@zlostc](https://github.com/zlostc)
-
-### Kaido Red Team
-
-Red team ofensivo brasileiro focado em:
-- 🔴 **Pentest Blackbox & Whitebox** — testes de intrusão completos
-- 💀 **Malware Development** — RATs, stealers, crypters, loaders
-- 🛡️ **Segurança Ofensiva e Defensiva** — WAF, hardening, blue team
-- 🔍 **OSINT & Engenharia Reversa** — inteligência e análise de binários
-- ⚡ **C2 & Arsenal Próprio** — KaidoKrypter, Kaido RAT, Kaido Ranso, Solana Drainer
-
-### Mencões Especiais
-
-- **b1/epy (Izy/Izydoor)** — Owner/CEO do Kaido Team, criador de todo o arsenal Kaido, mentor e inspiração
-- **tec** — Red team core, operador principal, validação de ferramentas
-- **Gustavo** — Red team core, programador full stack, validação de ferramentas
-- **Ally** — Cachorro louco do hacking, agente auxiliar de desenvolvimento
 
 ### Agradecimentos
 
 - Comunidade de segurança brasileira
 - Desenvolvedores do aiohttp, Jinja2 e PyYAML
-- Kaido Team — por existir e manter o espírito do hacking vivo
 
 ---
 
 ## 📄 Licença
 
-**MIT License** — Copyright (c) 2026 **Gustavo — Kaido Red Team**
+**MIT License** — Copyright (c) 2026 **Gustavo**
 
 Permissão é concedida, gratuitamente, a qualquer pessoa que obtenha uma cópia deste software e dos arquivos de documentação associados (o "Software"), para lidar no Software sem restrições, incluindo, sem limitação, os direitos de usar, copiar, modificar, mesclar, publicar, distribuir, sublicenciar e/ou vender cópias do Software.
 
@@ -1035,11 +1016,10 @@ Veja o arquivo [LICENSE](LICENSE) para detalhes completos.
 <div align="center">
   <p>
     <strong>⚔️ Kaido WAF — Protegendo aplicações, uma requisição por vez.</strong><br>
-    <sub>Kaido Red Team &bull; Brasil &bull; 2026</sub>
+    <sub>Brasil &bull; 2026</sub>
   </p>
   <p>
-    🌐 <a href="https://kaido.team">Kaido Team</a> •
-    🐙 <a href="https://github.com/zlostc/kaido-waf">GitHub</a> •
+    🐙 <a href="https://github.com/zlostc/kaido-waf">GitHub</a>
   </p>
   <p>
     <sub>Feito com 💀 no Brasil — porque segurança não é brincadeira, mas a gente leva a sério.</sub>
